@@ -300,16 +300,10 @@ $('.head').on('click',()=>{
     console.log(finishCreate)
 })
 if ('ontouchstart' in document.body) {
-    $('.head').on('touchstart',()=>{
+    $('.head').on('click',()=>{
         if (finishCreate) {
             $('.hand.right').addClass('active')
             $('.speaking').addClass('active')
-        }
-    })
-    $('.head').on('touchend',()=>{
-        if (finishCreate) {
-            $('.hand.right').removeClass('active')
-            $('.speaking').removeClass('active')
         }
     })
 } else {
