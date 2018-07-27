@@ -322,21 +322,21 @@ $('button[data-speed]').on('click',(buttonTarget)=>{
 if ('ontouchstart' in document.body) {
     $('.head').on('click',()=>{
         if (finishCreate) {
-            $('.hand.right').addClass('active')
-            $('.speaking').addClass('active')
+            $('.hand.right').addClass('active Phone')
+            $('.speaking').addClass('active Phone')
         }
     })
 } else {
     $('.head').on('mouseenter',()=>{
         if (finishCreate) {
-            $('.hand.right').addClass('active')
-            $('.speaking').addClass('active')
+            $('.hand.right').addClass('active PC')
+            $('.speaking').addClass('active PC')
         }
     })
     $('.head').on('mouseleave',()=>{
         if (finishCreate) {
-            $('.hand.right').removeClass('active')
-            $('.speaking').removeClass('active')
+            $('.hand.right').removeClass('active PC')
+            $('.speaking').removeClass('active PC')
         }
     })
 }

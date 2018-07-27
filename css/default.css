@@ -137,13 +137,21 @@ body{
     display:block;
     opacity: 1;
 }
-.speaking>pre{
+.speaking.active.Phone>pre{
     /* align-content:  */
     font-size:20px;
     font-family:方正舒体;
 }
-.speaking span{
+.speaking.active.Phone span{
     font-size:20px;
+    color:#EE5253;
+}.speaking.active.PC>pre{
+    /* align-content:  */
+    font-size:22px;
+    font-family:方正舒体;
+}
+.speaking.active.PC span{
+    font-size:28px;
     color:#EE5253;
 }
 button{
