@@ -219,8 +219,8 @@ let result=`/* 我们来展示一下怎么用网页画一个小猪佩奇吧~ */
 .hand.left::after,
 .hand.right::before,
 .hand.right::after{
-    opacity: 1;
     display:block;
+    opacity: 1;
 }
 /* 最后是一双小细腿，我们准备画完啦 */
 .foot{
@@ -275,7 +275,7 @@ let result=`/* 我们来展示一下怎么用网页画一个小猪佩奇吧~ */
 /* 摸摸小猪佩奇的头呗，佩奇会和你互动一下！~ */
 `
 let n=0
-let during=40
+let during=0
 let finishCreate=false;
 let id=setTimeout(function fn1(){
     n+=1
@@ -289,15 +289,35 @@ let id=setTimeout(function fn1(){
     }
 },during)
 
-$('.endButton').on('click',(buttonTarget)=>{
+$('.endButton').on('click',()=>{
     clearTimeout(id)
     code.innerHTML=Prism.highlight(result.substring(0,result.length-1), Prism.languages.css, 'css');
     styleCode.innerHTML=result.substring(0,result.length-1)
     code.scrollTop=code.scrollHeight
     finishCreate=true
+    $('.endButton').siblings().attr('disabled',true);
+})
+$('button').on('click',(buttonTarget)=>{
+    let target=buttonTarget.currentTarget
+    $(target).addClass('active').siblings('.active').removeClass('active')
 })
 $('.head').on('click',()=>{
     console.log(finishCreate)
+})
+$('button[data-speed]').on('click',(buttonTarget)=>{
+    let speedTag=buttonTarget.currentTarget.attributes[0].nodeValue
+    console.log(speedTag)
+    switch (speedTag) {
+        case 'fast':
+            during=0
+            break
+        case 'middle':
+            during=30
+            break
+        case 'slow':
+            during=60
+            break
+    }
 })
 if ('ontouchstart' in document.body) {
     $('.head').on('click',()=>{

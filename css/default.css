@@ -1,5 +1,5 @@
 *{margin:0;padding:0;box-sizing:border-box; transition:all 1s;}
-*::before,*::after{box-sizing:border-box;}
+*::before,*::after{box-sizing:border-box;transition:all 1s;}
 body{
     display:flex;
     flex-direction: column; 
@@ -25,15 +25,6 @@ body{
     left:50%;
     margin-left:-138px;
     opacity: 0;
-}
-.endButton{
-    position:fixed;
-    right:0;
-    font-size:24px;
-    font-family:黑体;
-    padding:10px;
-    margin:20px;
-    border-radius:5px;
 }
 .hand.left::before{
     content:'';
@@ -154,4 +145,43 @@ body{
 .speaking span{
     font-size:20px;
     color:#EE5253;
+}
+button{
+    outline:none;
+    border:0;
+    border:1px transparent solid;
+    border-top-color:#FCC7B7;
+    border-bottom-color:rgba(243,112,130,1);
+    background:linear-gradient(180deg, rgba(255,159,160,1) 0%, rgba(243,112,130,1) 100%); 
+    box-shadow:0 0 0 1px #C04564, 0px 5px 14px -3px rgba(0,0,0,0.75);
+    cursor: pointer;
+    font-size:24px;
+    font-family:黑体;
+    border-radius:5px;
+    padding:10px;
+    margin-right:20px;
+    margin-top: 10px;
+    transition:none;
+}
+button>span{
+    transition:none;
+    color:white;
+}
+button:hover{
+    box-shadow: inset 0px 20px 108px -53px rgba(255,255,255,1),
+    0 0 0 1px #C04564, 0px 5px 14px -3px rgba(0,0,0,0.75);
+}
+button.active >span{
+    color:#B72959;
+}
+.buttonArea{
+    position:fixed;
+    right:0;
+    display: flex;
+    flex-direction: column;
+    transition:none;
+}
+#adjustSpeed{
+    position:fixed;
+    right:0;
 }
